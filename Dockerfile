@@ -5,7 +5,8 @@ FROM ubuntu:18.04
 RUN apt-get update && \
   apt-get install  cmake -y && \
   apt-get install  git bash -y && \
-  apt-get install  gcc-6 g++-6 gfortran-6 -y && \
+  apt-get install --no-install-recommends wget && \
+  apt-get install  gcc-8 g++-8 gfortran-8 -y && \
   apt-get install --no-install-recommends python2.7 python-pip  python-wheel  python-setuptools -y && \
   apt-get install --no-install-recommends libopenmpi-dev openmpi-bin -y && \
   apt-get install --no-install-recommends libcfitsio-dev -y && \
@@ -13,6 +14,6 @@ RUN apt-get update && \
   pip install fypp
 
 # Set environment variables
-ENV CC=gcc-6 \
-  CXX=g++-6  \
-  FC=gfortran-6
+ENV CC=gcc-8 \
+  CXX=g++-8  \
+  FC=gfortran-8
