@@ -1,5 +1,5 @@
 # Start from Alpine Linux, which is smaller than a full Ubuntu image
-FROM ubuntu:18.04 
+FROM ubuntu:20.04 
 
 # Add/update required dependencies
 RUN apt-get update && \
@@ -10,11 +10,11 @@ RUN apt-get update && \
   apt-get install cmake -y && \
   apt-get install  git bash -y && \
   apt-get install gcc-9 g++-9 gfortran-9 -y && \
-  apt-get install --no-install-recommends python3.8 python-pip  python-wheel  python-setuptools -y && \
+  apt-get install --no-install-recommends python3 python3-pip  python3-wheel  python3-setuptools -y && \
   apt-get install --no-install-recommends libopenmpi-dev openmpi-bin -y && \
   apt-get install --no-install-recommends libcfitsio-dev -y && \
   apt-get install --no-install-recommends liblapack-dev libfftw3-dev libfftw3-doc -y && \
-  pip install -Iv fypp=3.0
+  pip3 install -Iv fypp==3.0
 
 # Set environment variables
 ENV CC=gcc-9 \
